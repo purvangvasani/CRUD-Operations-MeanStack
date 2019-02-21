@@ -1,0 +1,57 @@
+<div class="ng-container">
+    <div class="button-row">
+        <a mat-raised-button color="primary" [routerLink]="['/employee']">
+            <mat-icon>list</mat-icon>
+        </a>
+    </div>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>
+                <h2>{{employee.title}}</h2>
+            </mat-card-title>
+            <mat-card-subtitle>{{employee.description}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <table #table>
+                <tr class="tab-row">
+                    <td class="header-col1">Emp ID</td>
+                    <td class="header-col1"> : </td>
+                    <td class="header-col2">{{employee.emp_ID}}</td>
+                </tr>
+                <tr class="tab-row">
+                    <td class="header-col1">Emp Name</td>
+                    <td class="header-col1"> : </td>
+                    <td class="header-col2">{{employee.emp_Name}}</td>
+                </tr>
+                <tr class="tab-row">
+                    <td class="header-col1">Emp Age</td>
+                    <td class="header-col1"> : </td>
+                    <td class="header-col2">{{employee.emp_Age}}</td>
+                </tr>
+                <tr class="tab-row">
+                    <td class="header-col1">Emp Gender</td>
+                    <td class="header-col1"> : </td>
+                    <td class="header-col2">{{employee.emp_Gender}}</td>
+                </tr>
+                <tr class="tab-row">
+                    <td class="header-col1">Emp Position</td>
+                    <td class="header-col1"> : </td>
+                    <td class="header-col2">{{employee.emp_Position}}</td>
+                </tr>
+                <tr class="tab-row">
+                    <td class="header-col1">Emp JoinDate</td>
+                    <td class="header-col1"> : </td>
+                    <td class="header-col2">{{employee.emp_JoinDate}}</td>
+                </tr>
+            </table>
+        </mat-card-content>
+        <mat-card-actions>
+            <a mat-raised-button color="primary" [routerLink]="['/employee-edit', employee._id]">
+                <mat-icon>edit</mat-icon>
+            </a>
+            <a mat-raised-button color="warn" (click)="deleteEmployee(employee._id)">
+                <mat-icon>delete</mat-icon>
+            </a>
+        </mat-card-actions>
+    </mat-card>
+</div>

@@ -1,0 +1,33 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.mat {
+    color: #CECECF;
+}
+
+.example-full-width:nth-last-child() {
+    margin-bottom: 10px;
+}
+
+.button-row {
+    padding-bottom: 10px;
+}
+
+.ng-container {
+    margin: 30px;
+}
+
+.margin-20 {
+    margin: 25px;
+}
+
+.bg-color {
+    background-color: #5c5d60;
+}

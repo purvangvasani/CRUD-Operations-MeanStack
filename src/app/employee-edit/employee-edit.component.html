@@ -1,0 +1,57 @@
+<div class="ng-container">
+    <div class="button-row">
+        <a mat-raised-button color="primary" (click)="employeeDetails()">
+            <mat-icon>list</mat-icon>
+        </a>
+    </div>
+    <form class="bg-color" [formGroup]="employeeForm" (ngSubmit)="onFormSubmit(employeeForm.value)">
+        <div class="margin-20">
+            <mat-form-field class="example-full-width">
+                <input matInput class="mat" placeholder="ID" formControlName="emp_ID" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!employeeForm.get('emp_ID').valid && employeeForm.get('emp_ID').touched">Please enter Employee ID</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput class="mat" placeholder="Name" formControlName="emp_Name" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!employeeForm.get('emp_Name').valid && employeeForm.get('emp_Name').touched">Please enter Employee Name</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput class="mat" placeholder="Age" formControlName="emp_Age" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!employeeForm.get('emp_Age').valid && employeeForm.get('emp_Age').touched">Please enter Employee Age</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <!-- <input matInput class="mat" placeholder="emp_Gender" formControlName="emp_Gender" [errorStateMatcher]="matcher"> -->
+                <select matNativeControl required placeholder="Gender" class="mat" formControlName="emp_Gender">
+                    <option >Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                <mat-error>
+                    <span *ngIf="!employeeForm.get('emp_Gender').valid && employeeForm.get('emp_Gender').touched">Please enter Employee Gender</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput class="mat" placeholder="Position" formControlName="emp_Position" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!employeeForm.get('emp_Position').valid && employeeForm.get('emp_Position').touched">Please enter Employee Position</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput class="mat" required formControlName="emp_JoinDate" [matDatepicker]="picker" placeholder="JoinDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error>
+                    <span *ngIf="!employeeForm.get('emp_JoinDate').valid && employeeForm.get('emp_JoinDate').touched">Please enter Employee JoinDate</span>
+                </mat-error>
+            </mat-form-field>
+            <div class="button-row">
+                <button type="submit" [disabled]="!employeeForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+            </div>
+        </div>
+    </form>
+</div>

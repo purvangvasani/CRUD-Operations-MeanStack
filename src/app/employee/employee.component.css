@@ -1,0 +1,41 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 300px;
+    overflow: auto;
+}
+
+.emp-col {
+    flex: 0 0 100px !important;
+    background-color: azure;
+    color: violet;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: unset !important;
+}
+
+.header-col {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.button-row {
+    margin: 10px 0;
+}
+
+.ng-container {
+    margin: 30px;
+}
+
+.button-row {
+    margin: 10px 0;
+}
+
+.alert {
+    border: 1px solid lightblue;
+    background-color: lightblue;
+    padding: 10px;
+    border-radius: 20px;
+    color: darkblue;
+}

@@ -1,0 +1,64 @@
+<div class="ng-container">
+    <div class="button-row">
+        <a mat-raised-button color="primary" [routerLink]="['/employee-create']">
+            <mat-icon>add</mat-icon>
+        </a>
+    </div>
+    <div class="alert button-row">
+        Click on the Employee to View More Details!
+    </div>
+    <div class="example-container mat-elevation-z8">
+        <table mat-table #table [dataSource]="dataSource">
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="emp_ID">
+                <th mat-header-cell *matHeaderCellDef class="header-col"> ID </th>
+                <td mat-cell *matCellDef="let element" class="emp-col"> {{element.emp_ID}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="emp_Name">
+                <th mat-header-cell *matHeaderCellDef class="header-col"> Name </th>
+                <td mat-cell *matCellDef="let element" class="emp-col"> {{element.emp_Name}} </td>
+            </ng-container>
+
+            <!-- Age Column -->
+            <!-- <ng-container matColumnDef="emp_Age">
+                <th mat-header-cell *matHeaderCellDef class="header-col"> Age </th>
+                <td mat-cell *matCellDef="let element" class="emp-col"> {{element.emp_Age}} </td>
+            </ng-container> -->
+
+            <!-- Gender Column -->
+            <!-- <ng-container matColumnDef="emp_Gender">
+                <th mat-header-cell *matHeaderCellDef class="header-col"> Gender </th>
+                <td mat-cell *matCellDef="let element" class="emp-col"> {{element.emp_Gender}} </td>
+            </ng-container> -->
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="emp_Position">
+                <th mat-header-cell *matHeaderCellDef class="header-col"> Position </th>
+                <td mat-cell *matCellDef="let element" class="emp-col"> {{element.emp_Position}} </td>
+            </ng-container>
+
+            <!-- JoinDate Column -->
+            <!-- <ng-container matColumnDef="emp_JoinDate">
+                <th mat-header-cell *matHeaderCellDef class="header-col"> JoinDate </th>
+                <td mat-cell *matCellDef="let element" class="emp-col"> {{element.emp_JoinDate}} </td>
+            </ng-container> -->
+            <!-- <ng-container matColumnDef="emp_Actions">
+                <th mat-header-cell *matHeaderCellDef class="header-col">Actions</th>
+                <td mat-cell class="emp-col">
+                    <a mat-raised-button color="primary" [routerLink]="['/employee-edit', employee._id]">
+                        <mat-icon>edit</mat-icon>
+                    </a>
+                    <a mat-raised-button color="warn" (click)="deleteEmployee(employee._id)">
+                        <mat-icon>delete</mat-icon>
+                    </a>
+                </td>
+            </ng-container> -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/employee-details/', row._id]">
+            </tr>
+        </table>
+    </div>
+</div>

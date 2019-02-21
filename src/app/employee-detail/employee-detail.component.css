@@ -1,0 +1,29 @@
+.button-row {
+    margin: 10px 0;
+}
+
+.ng-container {
+    margin: 30px;
+}
+
+.header-col1 {
+    padding: 15px !important;
+    display: table-cell !important;
+    vertical-align: inherit !important;
+    color: rgba(255, 255, 255, .7);
+    font-size: 14px;
+}
+
+.header-col2 {
+    padding: 15px !important;
+    display: table-cell !important;
+    vertical-align: inherit !important;
+    color: rgba(255, 255, 255, .7);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.tab-row {
+    height: 40px;
+    background-color: #424242;
+}
